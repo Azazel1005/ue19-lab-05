@@ -24,6 +24,6 @@ jobs:
 
     - name: Build and push Docker image
       run: |
-        repo_name=$(echo "ue19-lab-05" | tr '[:upper:]' '[:lower:]')  # convert repo name to lowercase
+        repo_name=$(echo "ue19-lab-05" | tr '[:upper:]' '[:lower:]')  # Convert to lowercase
         docker build -t ghcr.io/azazel1005/$repo_name:latest .
         docker push ghcr.io/azazel1005/$repo_name:latest
