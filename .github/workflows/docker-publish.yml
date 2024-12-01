@@ -24,10 +24,12 @@ jobs:
       run: |
         repo_name=$(echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]')
         owner_name=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
-        docker build -t ghcr.io/$owner_name/$repo_name:latest .
+        # Utilisation du nom d'utilisateur GitHub personnel pour l'URL du registre
+        docker build -t ghcr.io/${{ github.actor }}/${repo_name}:latest .
 
     - name: Push Docker image
       run: |
         repo_name=$(echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]')
         owner_name=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
-        docker push ghcr.io/$owner_name/$repo_name:latest
+        # Utilisation du nom d'utilisateur GitHub personnel pour l'URL du registre
+        docker push ghcr.io/${{ github.actor }}/${repo_name}:latest
