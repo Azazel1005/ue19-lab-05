@@ -28,4 +28,6 @@ jobs:
 
     - name: Push Docker image
       run: |
-        repo_name=$(echo "${{ github.repository }}" | tr '[:upper:]' '[:low
+        repo_name=$(echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]')
+        owner_name=$(echo "${{ github.repository_owner }}" | tr '[:upper:]' '[:lower:]')
+        docker push ghcr.io/$owner_name/$repo_name:latest
