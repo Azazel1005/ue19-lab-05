@@ -22,14 +22,14 @@ jobs:
 
     - name: Build Docker image
       run: |
-        # Convertir à la fois le nom du repo et le nom d'utilisateur en minuscules
+        # Convertir le nom du repo et le nom d'utilisateur en minuscules
         repo_name=$(echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]')
         owner_name=$(echo "${{ github.actor }}" | tr '[:upper:]' '[:lower:]')
         docker build -t ghcr.io/$owner_name/$repo_name:latest .
 
     - name: Push Docker image
       run: |
-        # Convertir à la fois le nom du repo et le nom d'utilisateur en minuscules
+        # Convertir le nom du repo et le nom d'utilisateur en minuscules
         repo_name=$(echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]')
         owner_name=$(echo "${{ github.actor }}" | tr '[:upper:]' '[:lower:]')
         docker push ghcr.io/$owner_name/$repo_name:latest
