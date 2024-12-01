@@ -27,7 +27,7 @@ jobs:
         owner_name=$(echo "${{ github.actor }}" | tr '[:upper:]' '[:lower:]')
         echo "Repository name: $repo_name"
         echo "Owner name: $owner_name"
-        docker build -t ghcr.io/$owner_name/$repo_name:latest .
+        docker build -t ghcr.io/azazel1005/$repo_name:latest .
 
     - name: Push Docker image
       run: |
@@ -35,4 +35,4 @@ jobs:
         repo_name=$(echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]')
         owner_name=$(echo "${{ github.actor }}" | tr '[:upper:]' '[:lower:]')
         echo "Pushing Docker image ghcr.io/$owner_name/$repo_name:latest"
-        docker push ghcr.io/$owner_name/$repo_name:latest
+        docker push ghcr.io/azazel1005/$repo_name:latest
