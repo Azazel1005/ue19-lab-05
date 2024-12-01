@@ -23,6 +23,6 @@ jobs:
           tags: ghcr.io/azazel1005/ue19-lab-05:latest
 
       - name: Scan the container image for vulnerabilities
-        uses: aquasecurity/trivy-action@v0.3.0
+        uses: aquasecurity/trivy-action@v0.28.0
         with:
           image-ref: ghcr.io/azazel1005/ue19-lab-05:latest
