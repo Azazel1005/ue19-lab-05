@@ -34,8 +34,8 @@ jobs:
           tags: ghcr.io/azazel1005/ue19-lab-05:latest
 
       # 5. Scan the Docker image for vulnerabilities using Trivy
-      - name: Scan Docker image for vulnerabilities with Trivy
-        uses: aquasecurity/trivy-action@v0.3.0
+      - - name: Scan the container image for vulnerabilities
+      - uses: aquasecurity/trivy-action@v0.22.0
         with:
           image: ghcr.io/azazel1005/ue19-lab-05:latest
           format: 'table'  # You can change the format to json or html if preferred
